@@ -1,0 +1,101 @@
+{
+	"MatrixExpo": {
+		"scope": "cpp",
+		"prefix": "matexpo",
+		"body": [
+		  "const int N = 100;",
+		  "",
+		  "struct matrix {",
+		  "    __int128_t mat[N][N];",
+		  "    int r, c;",
+		  "    matrix(int rr, int cc) {",
+		  "        r = rr, c = cc;",
+		  "        memset(mat, 0, sizeof mat);",
+		  "    }",
+		  "    matrix operator *(const matrix &b) {",
+		  "        assert(c == b.r);",
+		  "        matrix res(r, b.c);",
+		  "        for(int i = 0; i < res.r; ++i) {",
+		  "            for(int j = 0; j < res.c; ++j) {",
+		  "                for(int k = 0; k < c; ++k) {",
+		  "                    res.mat[i][j] += mat[i][k] * b.mat[k][j];",
+		  "                }",
+		  "            }",
+		  "        }",
+		  "        return res;",
+		  "    }",
+		  "};"
+		],
+		"description": "MatrixExpo"
+	  },
+	  "BinaryExpo": {
+		"scope": "cpp",
+		"prefix": "binpow",
+		"body": [
+          "",
+		  "int64_t binpow(int64_t x, int64_t n) {",
+		  "    auto res = x;",
+		  "    for(n--; n > 0; n >>= 1) {",
+		  "        if(n & 1) res = res * x % P;",
+		  "        x = x * x % P;",
+		  "    }",
+		  "    return res;",
+		  "}"
+		],
+		"description": "BinaryExpo"
+		},
+
+		"Binomial": {
+			"scope": "cpp",
+			"prefix": "ncr",
+			"body": [
+				"const int N = 100, P = 7 + 1e9;",
+				"int64_t fac[N + 1], invfac[N + 1];",
+				"",
+				"",
+				"void precalc() {",
+				"    fac[0] = invfac[0] = 1LL;;",
+				"    for(int i = 1; i <= N; ++i) fac[i] = i * fac[i - 1] % P;",
+				"    for(int i = 1; i <= N; ++i) invfac[i] = invfac[i - 1] * binpow(i, P - 2) % P;",
+				"}"
+			],
+			"description": "Binomial"
+		  },
+		"MultipleTestCases": {
+			"scope": "cpp",
+			"prefix": "mc",
+			"body": [
+			  "#include <bits/stdc++.h>",
+			  "using namespace std;",
+			  "",
+			  "void solve(__attribute__((unused)) int cs) {",
+			  "    ",
+			  "}",
+			  "",
+			  "signed main() {",
+			  "    ios_base::sync_with_stdio(false), cin.tie(nullptr);",
+			  "    int ts; cin >> ts;",
+			  "    for (int cs = 1; cs <= ts; cs++) {",
+			  "        //cout << \"Case \" << cs << \": \";",
+			  "        solve(cs);",
+			  "    }",
+			  "    return 0;",
+			  "}"
+			],
+			"description": "MultiTestCase"	
+		},
+		"SingleTestCase": {
+			"scope": "cpp",
+			"prefix": "nc",
+			"body": [
+			  "#include <bits/stdc++.h>",
+			  "using namespace std;",
+			  "",
+			  "signed main() {",
+			  "    ios_base::sync_with_stdio(false), cin.tie(nullptr);",
+			  "    ",
+			  "}"
+			],
+			"description": "SingleTestCase"
+		}
+}

@@ -1,0 +1,158 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "cppCustomBuild",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-o",
+                "io/bin",
+                "-O2",
+                "-I",
+                "$HOME/.CPtools",
+                "-std=c++17",
+                "-DFFS",
+                "-Wall",
+                "-Wextra",
+                "-Wshadow",
+                "-D_GLIBCXX_ASSERTIONS",
+                "-fsanitize=address,undefined",
+                "${fileBasename}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "revealProblems": "onProblem",
+                "focus": false,
+                "panel": "dedicated",
+                "clear": true
+            }
+        },
+        {
+            "label": "cppCustomRun",
+            "dependsOn": "cppCustomBuild",
+            "type": "shell",
+            "command": "./bin",
+            "args": [
+                "<",
+                "in.txt",
+                ">",
+                "out.txt"
+            ],
+            "options": {
+                "cwd": "${fileDirname}/io"
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": true,
+                "clear": true
+            },
+            "windows": {
+                "command": "bin",
+                "options": {
+                    "shell": {
+                        "executable": "cmd",
+                        "args": [
+                            "/d",
+                            "/c"
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "label": "pythonCustomRun",
+            "type": "shell",
+            "command": "${command:python.interpreterPath}",
+            "args": [
+                "${fileBasename}",
+                "<",
+                "io/in.txt",
+                ">",
+                "io/out.txt"
+            ],
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": true,
+                "clear": true
+            },
+            "windows": {
+                "options": {
+                    "shell": {
+                        "executable": "cmd",
+                        "args": [
+                            "/d",
+                            "/c"
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "label": "JavaCustomBuild",
+            "type": "shell",
+            "command": "javac",
+            "args": [
+                "${fileBasename}",
+                "-d",
+                "${fileDirname}/io/"
+            ],
+            "problemMatcher": {
+                "owner": "java",
+                "fileLocation": "absolute",
+                "pattern": {
+                    "regexp": "^(.*):([0-9]+): (error|warning): (.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "severity": 3,
+                    "message": 4
+                }
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": true,
+                "clear": true
+            }
+        },
+        {
+            "label": "JavaCustomRun",
+            "type": "shell",
+            "command": "java",
+            "args": [
+                "${fileBasenameNoExtension}",
+                "<",
+                "in.txt",
+                ">",
+                "out.txt"
+            ],
+            "options": {
+                "cwd": "${fileDirname}/io"
+            },
+            "dependsOn": "JavaCustomBuild",
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": true,
+                "clear": true
+            }
+        }
+    ]
+}
