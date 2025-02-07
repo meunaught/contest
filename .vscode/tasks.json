@@ -9,12 +9,9 @@
             "command": "g++",
             "args": [
                 "-o",
-                "io/bin",
+                "bin",
                 "-O2",
-                "-I",
-                "$HOME/.CPtools",
                 "-std=c++17",
-                "-DFFS",
                 "-Wall",
                 "-Wextra",
                 "-Wshadow",
@@ -47,7 +44,7 @@
                 "out.txt"
             ],
             "options": {
-                "cwd": "${fileDirname}/io"
+                "cwd": "${fileDirname}"
             },
             "presentation": {
                 "echo": true,
@@ -99,59 +96,6 @@
                         ]
                     }
                 }
-            }
-        },
-        {
-            "label": "JavaCustomBuild",
-            "type": "shell",
-            "command": "javac",
-            "args": [
-                "${fileBasename}",
-                "-d",
-                "${fileDirname}/io/"
-            ],
-            "problemMatcher": {
-                "owner": "java",
-                "fileLocation": "absolute",
-                "pattern": {
-                    "regexp": "^(.*):([0-9]+): (error|warning): (.*)$",
-                    "file": 1,
-                    "line": 2,
-                    "severity": 3,
-                    "message": 4
-                }
-            },
-            "presentation": {
-                "echo": true,
-                "reveal": "silent",
-                "focus": false,
-                "panel": "dedicated",
-                "showReuseMessage": true,
-                "clear": true
-            }
-        },
-        {
-            "label": "JavaCustomRun",
-            "type": "shell",
-            "command": "java",
-            "args": [
-                "${fileBasenameNoExtension}",
-                "<",
-                "in.txt",
-                ">",
-                "out.txt"
-            ],
-            "options": {
-                "cwd": "${fileDirname}/io"
-            },
-            "dependsOn": "JavaCustomBuild",
-            "presentation": {
-                "echo": true,
-                "reveal": "silent",
-                "focus": false,
-                "panel": "dedicated",
-                "showReuseMessage": true,
-                "clear": true
             }
         }
     ]

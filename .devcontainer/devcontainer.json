@@ -1,7 +1,15 @@
 {
-  "name": "C++ with Python Dev Container",
-  "image": "mcr.microsoft.com/vscode/devcontainers/cpp",
-  "features": {
-    "ghcr.io/devcontainers/features/python:1": {}
+    "name": "C++/Python",
+    "image": "mcr.microsoft.com/vscode/devcontainers/cpp",
+    "features": {
+      "ghcr.io/devcontainers/features/python:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools-themes",
+                "kevinrose.vsc-python-indent"
+            ]
+        }
+    }
   }
-}
