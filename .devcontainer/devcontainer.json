@@ -6,9 +6,15 @@
     },
     "customizations": {
         "vscode": {
+            "settings": {
+                "[python]": {
+                    "editor.formatOnType": true,
+                    "editor.defaultFormatter": "ms-python.autopep8"
+                },
+                "terminal.integrated.defaultProfile.linux": "zsh"
+            },
             "extensions": [
-                "ms-vscode.cpptools-themes",
-                "kevinrose.vsc-python-indent"
+                "ms-vscode.cpptools-themes"
             ]
         }
     }

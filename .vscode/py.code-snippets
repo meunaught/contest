@@ -3,15 +3,14 @@
 		"scope": "python",
 		"prefix": "mc",
 		"body": [
-		  "def solve():",
-		  "    ",
-		  "",
-		  "tc = int(input())",
-		  "for i in range(1, tc + 1):",
-		  "    print(\"Case %d:\" % i, end = \" \")",
-		  "    solve()",
-		  "    ",
-		  ""
+			"def solve():",
+			"",
+			"",
+			"if __name__ == \"__main__\":",
+			"    tc = int(input().strip())",
+			"    for i in range(1, tc + 1):",
+			"        print(\"Case %d:\" % i, end=\" \")",
+			"        solve()"
 		],
 		"description": "PythonMultiTestCase"
 	  }

@@ -9,9 +9,9 @@
             "command": "g++",
             "args": [
                 "-o",
-                "bin",
+                "${fileBasenameNoExtension}.out",
                 "-O2",
-                "-std=c++17",
+                "-std=c++20",
                 "-Wall",
                 "-Wextra",
                 "-Wshadow",
@@ -36,15 +36,15 @@
             "label": "cppCustomRun",
             "dependsOn": "cppCustomBuild",
             "type": "shell",
-            "command": "./bin",
+            "command": "./src/${fileBasenameNoExtension}.out",
             "args": [
                 "<",
-                "in.txt",
+                "data/in.txt",
                 ">",
-                "out.txt"
+                "data/out.txt"
             ],
             "options": {
-                "cwd": "${fileDirname}"
+                "cwd": "${workspaceFolder}"
             },
             "presentation": {
                 "echo": true,
@@ -54,30 +54,21 @@
                 "showReuseMessage": true,
                 "clear": true
             },
-            "windows": {
-                "command": "bin",
-                "options": {
-                    "shell": {
-                        "executable": "cmd",
-                        "args": [
-                            "/d",
-                            "/c"
-                        ]
-                    }
-                }
-            }
         },
         {
             "label": "pythonCustomRun",
             "type": "shell",
             "command": "${command:python.interpreterPath}",
             "args": [
-                "${fileBasename}",
+                "src/${fileBasename}",
                 "<",
-                "io/in.txt",
+                "data/in.txt",
                 ">",
-                "io/out.txt"
+                "data/out.txt"
             ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
             "presentation": {
                 "echo": true,
                 "reveal": "silent",
@@ -85,17 +76,6 @@
                 "panel": "dedicated",
                 "showReuseMessage": true,
                 "clear": true
-            },
-            "windows": {
-                "options": {
-                    "shell": {
-                        "executable": "cmd",
-                        "args": [
-                            "/d",
-                            "/c"
-                        ]
-                    }
-                }
             }
         }
     ]
