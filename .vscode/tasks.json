@@ -12,6 +12,8 @@
                 "${fileBasenameNoExtension}.out",
                 "-O2",
                 "-std=c++20",
+                "-Iinclude",
+                "-DFFS",
                 "-Wall",
                 "-Wextra",
                 "-Wshadow",
