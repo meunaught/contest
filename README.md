@@ -1,4 +1,4 @@
-# Project Title
+# Contest Programming Setup
 
 This repository contains a setup for contest programming using C++ and Python. It includes various configurations and snippets to streamline the development process.
 
