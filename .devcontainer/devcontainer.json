@@ -1,9 +1,6 @@
 {
     "name": "C++/Python",
     "image": "mcr.microsoft.com/vscode/devcontainers/cpp",
-    "features": {
-      "ghcr.io/devcontainers/features/python:1": {}
-    },
     "customizations": {
         "vscode": {
             "settings": {
