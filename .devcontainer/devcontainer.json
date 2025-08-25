@@ -3,18 +3,18 @@
     "image": "mcr.microsoft.com/vscode/devcontainers/cpp",
     "customizations": {
         "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools-extension-pack",
+                "ms-python.python",
+                "ms-python.autopep8"
+            ],
             "settings": {
                 "[python]": {
                     "editor.formatOnType": true,
                     "editor.defaultFormatter": "ms-python.autopep8"
                 },
                 "terminal.integrated.defaultProfile.linux": "zsh"
-            },
-            "extensions": [
-                "ms-vscode.cpptools-extension-pack",
-                "ms-python.python",
-                "ms-python.autopep8"
-            ]
+            }
         }
     }
   }
