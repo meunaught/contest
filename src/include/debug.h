@@ -1,5 +1,3 @@
-#ifndef DEBUG_TEMPLATE_CPP
-#define DEBUG_TEMPLATE_CPP
 #include <bits/stdc++.h>
 // #define cerr cout
 namespace __DEBUG_UTIL__
@@ -116,11 +114,4 @@ namespace __DEBUG_UTIL__
     }
 
 }
-#ifndef ONLINE_JUDGE
 #define debug(...) std::cerr << __DEBUG_UTIL__::outer << __LINE__ << ": [", __DEBUG_UTIL__::printer(#__VA_ARGS__, __VA_ARGS__)
-#define debugArr(...) std::cerr << __DEBUG_UTIL__::outer << __LINE__ << ": [", __DEBUG_UTIL__::printerArr(#__VA_ARGS__, __VA_ARGS__)
-#else
-#define debug(...)
-#define debugArr(...)
-#endif
-#endif

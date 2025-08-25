@@ -1,0 +1,66 @@
+{
+	"MultipleTestCases": {
+		"scope": "cpp",
+		"prefix": "mc",
+		"body": [
+			"#ifdef FFS",
+			"#include <debug.h>",
+			"#else",
+			"#include <bits/stdc++.h>",
+			"#define debug(...)",
+			"#endif",
+			"",
+			"using namespace std;",
+			"",
+			"void solve(__attribute__((unused)) int cs) {",
+			"    ",
+			"}",
+			"",
+			"signed main() {",
+			"    ios_base::sync_with_stdio(false), cin.tie(nullptr);",
+			"    int ts; cin >> ts;",
+			"    for (int cs = 1; cs <= ts; cs++) {",
+			"        //cout << \"Case \" << cs << \": \";",
+			"        solve(cs);",
+			"    }",
+			"    return 0;",
+			"}"
+		],
+		"description": "MultiTestCase"	
+	},
+	"SingleTestCase": {
+		"scope": "cpp",
+		"prefix": "nc",
+		"body": [
+			"#ifdef FFS",
+			"#include <debug.h>",
+			"#else",
+			"#include <bits/stdc++.h>",
+			"#define debug(...)",
+			"#endif",
+			"",
+			"using namespace std;",
+			"",
+			"signed main() {",
+			"    ios_base::sync_with_stdio(false), cin.tie(nullptr);",
+			"    ",
+			"}"
+		],
+		"description": "SingleTestCase"
+	},
+		"PythonMultiTestCase": {
+		"scope": "python",
+		"prefix": "mc",
+		"body": [
+			"def solve():",
+			"",
+			"",
+			"if __name__ == \"__main__\":",
+			"    tc = int(input().strip())",
+			"    for i in range(1, tc + 1):",
+			"        print(\"Case %d:\" % i, end=\" \")",
+			"        solve()"
+		],
+		"description": "PythonMultiTestCase"
+	  }
+}
