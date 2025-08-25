@@ -1,20 +1,21 @@
 {
     "name": "C++/Python",
-    "image": "mcr.microsoft.com/vscode/devcontainers/cpp",
+    "image": "mcr.microsoft.com/devcontainers/cpp:ubuntu-24.04",
     "customizations": {
         "vscode": {
+            "settings": {
+                "extensions.verifySignature": false,
+                "terminal.integrated.defaultProfile.linux": "zsh",
+                "[python]": {
+                    "editor.formatOnType": true,
+                    "editor.defaultFormatter": "ms-python.autopep8"
+                }
+            },
             "extensions": [
                 "ms-vscode.cpptools-extension-pack",
                 "ms-python.python",
                 "ms-python.autopep8"
-            ],
-            "settings": {
-                "[python]": {
-                    "editor.formatOnType": true,
-                    "editor.defaultFormatter": "ms-python.autopep8"
-                },
-                "terminal.integrated.defaultProfile.linux": "zsh"
-            }
+            ]
         }
     }
   }
