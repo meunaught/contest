@@ -1,6 +1,6 @@
 {
     "name": "C++/Python",
-    "image": "mcr.microsoft.com/devcontainers/cpp:ubuntu-24.04",
+    "image": "mcr.microsoft.com/devcontainers/cpp:debian-11",
     "customizations": {
         "vscode": {
             "settings": {
